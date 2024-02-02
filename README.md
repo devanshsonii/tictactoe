@@ -20,8 +20,7 @@ This repository contains a simple implementation of the classic Tic-Tac-Toe game
 
 ## Code Structure
 
-- **`main.cpp`:** Contains the main function where the game loop is executed.
-- **`functions.cpp`:** Defines functions for filling the array, checking for a win, taking user input, and printing the game board.
+- **`main.cpp`:** Contains the main function where the game loop is executed and where the logic exists.
 
 ## Build and Run
 
@@ -31,3 +30,5 @@ Compile the program using a C++ compiler. For example:
 bash
 g++ main.cpp functions.cpp -o tic_tac_toe
 ```
+Run the executable:
+`./tic_tac_toe`
