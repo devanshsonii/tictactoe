@@ -26,8 +26,7 @@ This repository contains a simple implementation of the classic Tic-Tac-Toe game
 
 Compile the program using a C++ compiler. For example:
 
-```
-bash
+```bash
 g++ main.cpp functions.cpp -o tic_tac_toe
 ```
 Run the executable:
