@@ -68,19 +68,23 @@ int takeInput(int arr[][3], int *piece, int *moves){
         cout << "Player O's turn, enter the row and column of your move: " ;
     }
     cin >> r >> c;
+    while(r <= 0 || r > 3 || c <= 0 || c > 3){
+        cout << "Please enter a valid input, the rows and columns can range from 1 to 3 only." << endl;
+        cin >> r >> c;
+    }
     cout << endl;
     // check if position is taken
-    if(arr[r][c] != -1){
+    if(arr[r-1][c-1] != -1){
         cout << "Invalid input, position already taken." << endl;
     } else {
-        arr[r][c] = *piece;
+        arr[r-1][c-1] = *piece;
         if(*piece) *piece = 0;
         else *piece = 1;
         *moves = *moves - 1;
     }
-    if(moves == 0){
-        cout << "Game Drawn." << endl;
-        return 1;
+    if(*moves == 0){
+        cout << "Game Drawn." << endl << endl;
+        return 0;
     }
     if(checkWin(arr)){
         return 0;
@@ -98,7 +102,6 @@ void printBoard(int arr[][3]){
             } else {
                 cout << " O ";
             }
-            // cout << "  ";
             if(j < 2) cout << "|";
         }
         cout << endl;
